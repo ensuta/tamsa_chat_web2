@@ -1,6 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/navbar/navbar"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar"
 import Team from "./pages/Team"
 import Purchase from "./pages/Purchase"
 import Home from "./pages/Home"
@@ -10,12 +10,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/team' component={Team} />
-        <Route path='/purchase' component={Purchase} />
-        <Route path='/contacts' component={Contact} />
-      </Switch>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/team' element={<Team />} />
+        <Route path='/purchase' element={<Purchase />} />
+        <Route path='/contacts' element={<Contact />} />
+      </Routes>
     </Router>
   );
 }
